@@ -1,4 +1,4 @@
-# Test.Bash-Online mobile automation challenge 
+# Test.Bash-Online AutomationWeek - mobile automation challenge 
 
 This repo shows the solution to the Test.bash('Online') AutomationWeek mobile challenge:
 
