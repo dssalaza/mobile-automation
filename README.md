@@ -11,10 +11,10 @@ Challenge is based on [Swaglabs App](https://github.com/saucelabs/sample-app-mob
 
 ## Dependencies
 
-Python 2.7.16
-Pytest 6.1.1
-XCODE + Command Line Tools
-Carthage (iOS dependency manager, install using homebrew)
+Python 2.7.16\
+Pytest 6.1.1\
+XCODE + Command Line Tools\
+Carthage (iOS dependency manager, install using homebrew)\
 Appium 1.18.3
 
 
