@@ -22,3 +22,14 @@ def login (self, user_name, password):
     username_field.send_keys(user_name)
     password_field.send_keys(password)
     login_button.click()
+
+def fill_payment_information (self, first_name, last_name, zip_code):
+    first_name_field = self.driver.find_element_by_accessibility_id('test-First Name')
+    last_name_field = self.driver.find_element_by_accessibility_id('test-Last Name')
+    zip_code_field = self.driver.find_element_by_accessibility_id('test-Zip/Postal Code')
+    continue_button = self.driver.find_element_by_accessibility_id('test-CONTINUE')
+    
+    first_name_field.send_keys(first_name)
+    last_name_field.send_keys(last_name)
+    zip_code_field.send_keys(zip_code)
+    continue_button.click()

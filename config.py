@@ -14,3 +14,9 @@ users = {
     "problem": "problem_user",
     "password": "secret_sauce"
 }
+
+payment_info = {
+    "firstName": "standard_user_first_name",
+    "lastName": "standard_user_last_name",
+    "zipCode": "12345"
+}

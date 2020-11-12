@@ -1,6 +1,6 @@
 import unittest
 import config
-from common_utils import set_up, tear_down, login
+from common_utils import *
 
 class LoginTest(unittest.TestCase):
     test_name = 'Users can login'
@@ -10,6 +10,10 @@ class LoginTest(unittest.TestCase):
         max_swipes = 4
         username = config.users["standard"]
         password = config.users["password"]
+        firstname = config.payment_info["firstName"]
+        lastname = config.payment_info["lastName"]
+        zipcode = config.payment_info["zipCode"]
+
         set_up(self)
         
         login(self, username, password)
@@ -37,3 +41,18 @@ class LoginTest(unittest.TestCase):
 
         checkout_button = self.driver.find_element_by_accessibility_id('test-CHECKOUT')
         checkout_button.click()
+
+        fill_payment_information(self, firstname, lastname, zipcode)
+
+        for z in range(1, max_swipes, 1):
+            try:
+                if self.driver.find_element_by_accessibility_id('test-FINISH'):
+                    finish_button = self.driver.find_element_by_accessibility_id('test-FINISH')
+                    finish_button.click()
+                    break
+            except:
+                self.driver.execute_script("mobile: swipe", {'direction': 'up'})
+
+        thank_you_label = self.driver.find_element_by_accessibility_id('THANK YOU FOR YOU ORDER')
+        
+        assert thank_you_label.text == 'THANK YOU FOR YOU ORDER'
